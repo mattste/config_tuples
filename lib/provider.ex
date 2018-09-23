@@ -81,6 +81,8 @@ defmodule ConfigTuples.Provider do
     env |> get_env_value(type, default) |> transform(transformer)
   end
 
+  defp replace_value(env), do: env
+
   defp get_env_value(env, type, default) do
     case System.get_env(env) do
       nil -> default
